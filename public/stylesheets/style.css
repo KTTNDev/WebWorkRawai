@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    overflow-x: hidden;
+    background: #9c9c9c88 !important;
+    font-family: "Kanit", sans-serif;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+.headname {
+    font-family: "Kanit", sans-serif;
+    font-size: 1.2rem;
+}
+
+.footer,
+.navtext {
+    font-family: "Kanit", sans-serif;
+    font-size: 1rem;
+}
+
+.headtext {
+    font-family: "Kanit", sans-serif;
+}
+
+.main-sidebar {
+    background-color: #01853D!important;
+}
+
+.content {
+    padding-top: 100px;
+}
+
+.content-Doc {
+    padding-top: 0;
+}
+
+.logo {
+    background-color: #01853D!important;
+}
+
+.sidebar {
+    background: url(/promthepsidebar.jpg);
+    background-size: cover;
+    background-position: center center;
+    display: block;
+    width: 100%;
+    padding-left: 0rem;
+    height: 100%;
+}
+
+.sidebar:before {
+    background: #00331D;
+    content: ' ';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: .8;
+}
+
+.garuda {
+    width: 120px;
+    display: block;
+    margin-left: auto;
+}
+
+.garuda1 {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+
+.garuda1-5 {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.garuda2 {
+    width: 80px;
+    display: block;
+}
+
+.center {
+    padding-top: 49px;
+    margin-left: 19rem;
+    font-weight: 800;
+}
+
+.weight {
+    font-weight: 800;
+}
+
+
+/*-------------------------------*/
+
+#box {
+    font-size: 28px;
+    padding: 0;
+    border-radius: 10px;
+    text-align: start;
+}
+
+#box_button {
+    font-size: 22px;
+    border-radius: 15px;
+}
+
+.form-control {
+    border-radius: 15px!important;
+}
+
+#logo {
+    font-size: 48px;
+}
+
+.form-control {
+    font-size: 28px!important;
+}
+
+.form-check-input {
+    position: absolute;
+    margin-top: 1rem!important;
+    margin-left: -1.25rem;
+}
+
+.card-body {
+    padding-left: 4rem;
+    padding-top: 5rem;
+    padding-right: 3rem;
+}
+
+.text-success {
+    color: #167265 !important;
+    font-size: 3rem;
+}
+
+.btn-success {
+    background-color: #3c8dbc!important;
+    border-color: #367fa9!important;
+}
+
+.header-droptone {
+    background-color: #01853D!important;
+}
+
+.footer-color {
+    background-color: #01853D!important;
+}
+
+@font-face {
+    font-family: THSarabun;
+    src: url(../fonts/THSarabun.ttf);
+}
+
+div,
+p,
+a,
+input,
+span {
+    font-family: THSarabun;
+    font-size: 28px;
+    margin: 0;
+}
+
+input {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1%;
+}
+
+.under {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    text-decoration-thickness: 1%;
+}
+
+.indent {
+    text-indent: 50px;
+}
+
+.align-Center {
+    text-align: center;
+}
+
+.logo-center {
+    margin-left: 25rem;
+}
+
+.tab1 {
+    padding-left: 8rem
+}
+
+.tab2 {
+    padding-left: 6rem
+}
+
+.text1 {
+    text-align: end;
+}
+
+.align-End {
+    margin-left: 8rem;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: flex-start;
+}
+
+.align-End2 {
+    margin-left: 17rem;
+    text-align: end;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.Signaturecenter {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.Signature2center {
+    margin-left: 8rem;
+}
+
+.Signature3center {
+    margin-left: 13rem;
+}
+
+.Signature2-1center {
+    margin-left: 6rem;
+}
+
+.Signature3-1center {
+    margin-left: 8rem;
+}
+
+.row1 {
+    display: flex;
+    text-align: center;
+    margin-left: 2rem;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: spac
+}
+
+.row2 {
+    display: flex;
+    text-align: center;
+    margin-left: 10rem;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: spac
+}
+
+.rightText1 {
+    padding-left: 23rem;
+}
+
+.indent1 {
+    text-indent: 9rem;
+}
+
+.rightText2 {
+    padding-left: 14rem;
+}
+
+.headerNor3 {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -7.5px;
+    margin-left: -7.5px;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: flex-start;
+    justify-content: space-between;
+}
