@@ -1,5 +1,129 @@
-extends layout
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
 
-block content
-  h1= title
-  p Welcome to #{title}
+<head>
+    <meta charset="utf-8">
+    <title>ระบบงานกองช่าง</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+</head>
+
+<body>
+    <!--
+    <form method="POST" action="pdfMake\pdf">
+        <label for="txtFirstName">First Name : </label>
+        <input type="text" id='txtFirstName' name='fname'>
+    </form>
+    <form method="POST" action="pdfMake\pdf">
+        <label for="txtLastName">Last Name : </label>
+        <input type="text" id='txtLastName' name='lname'>
+
+        <button type="submit">Create PDF</button>
+
+    </form>
+    -->
+    <%- include ('layout') %>
+        <section class="">
+            <div class="container-fluid">
+                <div class="form-group card-body ">
+                    <div class="col-md-12 card border-left-primary shadow-lg box box-green-light card card-outline card-success">
+                        <h4 class="m-4 text-success headtext"><i class="far fa-file-alt"></i> รายชื่อผู้สมัคร
+                        </h4>
+                        <hr>
+                        <table id="EmployeeLists" class="table table-striped table-bordered " style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>วันที่จัดเก็บ</th>
+                                    <th>ชื่อ นามสกุล</th>
+                                    <th>ใบขออนุญาต</th>
+                                    <th>เลขรับหนังสือ</th>
+                                    <th>ผู้รับคำขอ </th>
+                                    <th>ดูเอกสาร</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% DocsWorks.forEach(function(DocsWork){ %>
+                                    <tr>
+                                        <td>
+                                            <%= DocsWork.No %>
+                                        </td>
+                                        <td>
+                                            <%= DocsWork.fname %>
+                                                <%= DocsWork.lname%>
+                                        </td>
+                                        <td>
+                                            <%= DocsWork.idcard %>
+                                        </td>
+                                        <td>
+                                            <%= DocsWork.job %>
+                                        </td>
+
+                                        <td>
+                                            <%= DocsWork.date %>
+                                        </td>
+                                        <td>
+                                            <form action="/Documents/delete/" method="post" class="delete-Documents">
+                                                <a href="/Select-Print/<%= DocsWork._id %>" align="center" id="box" class="btn btn btn-block btn-info text-center"> <i class="fas fa-print"></i> สั่งพิมพ์ใบอนุญาต</a>
+                                            </form>
+                                        </td>
+                                    </tr>
+
+                                    <%})%>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>วันที่จัดเก็บ</th>
+                                    <th>ชื่อ นามสกุล</th>
+                                    <th>ใบขออนุญาต</th>
+                                    <th>เลขรับหนังสือ</th>
+                                    <th>ผู้รับคำขอ </th>
+                                    <th>ดูเอกสาร</th>
+                                </tr>
+
+                            </tfoot>
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </div>
+
+        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js">
+        </script>
+        <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js">
+        </script>
+        <script>
+            // Call the dataTables jQuery plugin
+            $(document).ready(function() {
+                $('#EmployeeLists').DataTable();
+            });
+        </script>
+        <aside class="control-sidebar control-sidebar-dark">
+        </aside>
+
+
+
+</body>
+<script type="text/javascript">
+    $(DocsWork).ready(function() {
+
+        $('.delete-DocsWorks').on('submit', function() {
+            if (confirm('คุณต้องการลบใช่หรือไม่')) {
+
+                return true;
+            } else {
+                return false;
+            }
+        });
+    });
+</script>
+
+</html>

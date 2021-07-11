@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 //Connect DB
 var mongodb = require('mongodb');
-var db = require('monk')('localhost:27017/DBworkrawai');
+var db = require('monk')('localhost:27017/DBwebrawai');
 
 
 //Add ระบบ API PDF Print

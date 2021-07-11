@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>ระบบงานกองช่าง</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+</head>
+
+<body>
+    <%- include layout %>
+        <%- include navbar %>
+            <div class="content-wrapper">
+                <section class="">
+                    <div class="container-fluid">
+                        <div class="form-group card-body ">
+                            <div class="col-md-12 card border-left-primary shadow-lg box box-green-light card card-outline card-success">
+                                <h2 class="m-4  text-success headtext"><i class="far fa-file-alt"></i> เลือกเอกสารสำหรับพิมพ์
+                                </h2>
+                                <hr>
+                                <%Documents.forEach(function(Document) {%>
+
+
+                                    <div class="row">
+
+                                        <!-- /.col -->
+                                        <div class="col-md-3 col-sm-6 col-12">
+
+                                            <div class="info-box">
+                                                <a type="button" href="/Print-Aor1/<%= Document._id %>" id="box_button" class="btn info-box-icon bg-success"><i class="fas fa-print"></i>
+                                                </a>
+                                                <div class="info-box-content">
+                                                    <a type="button" href="/Print-Aor1/<%= Document._id %>" id="box" class="btn btn-default">พิมพ์ อ.๑ </a>
+                                                </div>
+                                            </div>
+                                            <!-- /.info-box -->
+                                        </div>
+                                        <!-- /.col -->
+                                        <div class="col-md-3 col-sm-6 col-12">
+
+                                            <div class="info-box">
+                                                <a type="button" href="/Print-Nor1/<%= Document._id %>" id="box_button" class="btn info-box-icon bg-success"><i class="fas fa-print"></i>
+                                                </a>
+                                                <div class="info-box-content">
+                                                    <a type="button" href="/Print-Nor1/<%= Document._id %>" id="box" class="btn btn-default">พิมพ์ น.๑ </a>
+                                                </div>
+                                            </div>
+                                            <!-- /.info-box -->
+                                        </div>
+                                        <!-- /.col -->
+                                        <div class=" col-sm-6 col-12">
+
+                                            <div class="info-box">
+                                                <a type="button" href="/Print-KorKwam1/<%= Document._id %>" id="box_button" class="btn info-box-icon bg-success"><i class="fas fa-print"></i>
+                                                </a>
+                                                <div class="info-box-content">
+                                                    <a type="button" href="/Print-KorKwam1/<%= Document._id %>" id="box" class="btn btn-default">พิมพ์บันทึกข้อความ</a>
+                                                </div>
+                                            </div>
+                                            <!-- /.info-box -->
+                                        </div>
+                                        <!-- /.col -->
+                                    </div>
+
+                                    <% })%>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+            <%- include footer %>
+
+                <aside class="control-sidebar control-sidebar-dark">
+                </aside>
+
+                </div>
+
+
+</body>
+
+</html>
