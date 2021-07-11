@@ -38,12 +38,12 @@
                         <table id="EmployeeLists" class="table table-striped table-bordered " style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>วันที่จัดเก็บ</th>
+                                    <th>ลำดับ</th>
                                     <th>ชื่อ นามสกุล</th>
-                                    <th>ใบขออนุญาต</th>
-                                    <th>เลขรับหนังสือ</th>
-                                    <th>ผู้รับคำขอ </th>
-                                    <th>ดูเอกสาร</th>
+                                    <th>เลขบัตรประจำตัวประชาชน</th>
+                                    <th>งานที่ต้องการ</th>
+                                    <th>ฉีดวัคซีน </th>
+                                    <th>ออกเอกสาร</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -64,11 +64,11 @@
                                         </td>
 
                                         <td>
-                                            <%= DocsWork.date %>
+                                            <%= DocsWork.docs %>
                                         </td>
                                         <td>
                                             <form action="/Documents/delete/" method="post" class="delete-Documents">
-                                                <a href="/Select-Print/<%= DocsWork._id %>" align="center" id="box" class="btn btn btn-block btn-info text-center"> <i class="fas fa-print"></i> สั่งพิมพ์ใบอนุญาต</a>
+                                                <a href="/Select-Print/<%= DocsWork._id %>" align="center" id="box" class="btn btn btn-block btn-info text-center"> <i class="fas fa-print"></i> print</a>
                                             </form>
                                         </td>
                                     </tr>
@@ -77,12 +77,12 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th>วันที่จัดเก็บ</th>
+                                    <th>ลำดับ</th>
                                     <th>ชื่อ นามสกุล</th>
-                                    <th>ใบขออนุญาต</th>
-                                    <th>เลขรับหนังสือ</th>
-                                    <th>ผู้รับคำขอ </th>
-                                    <th>ดูเอกสาร</th>
+                                    <th>เลขบัตรประจำตัวประชาชน</th>
+                                    <th>งานที่ต้องการ</th>
+                                    <th>ฉีดวัคซีน </th>
+                                    <th>ออกเอกสาร</th>
                                 </tr>
 
                             </tfoot>

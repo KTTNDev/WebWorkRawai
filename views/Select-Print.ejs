@@ -14,76 +14,322 @@
 </head>
 
 <body>
-    <%- include layout %>
-        <%- include navbar %>
-            <div class="content-wrapper">
-                <section class="">
-                    <div class="container-fluid">
-                        <div class="form-group card-body ">
-                            <div class="col-md-12 card border-left-primary shadow-lg box box-green-light card card-outline card-success">
-                                <h2 class="m-4  text-success headtext"><i class="far fa-file-alt"></i> เลือกเอกสารสำหรับพิมพ์
-                                </h2>
-                                <hr>
-                                <%Documents.forEach(function(Document) {%>
+    <style>
+        .row {
+            margin-top: -8px;
+        }
+        
+        .p1 {
+            font-size: 2rem;
+        }
+        
+        .normal {
+            margin-top: 0!important;
+        }
+        
+        .card-body {
+            padding-left: 1rem!important;
+            padding-top: 0 !important;
+        }
+    </style>
+    <%- include ('layout') %>
+        <div class="container">
+            <% DocsWorks.forEach(function(DocsWork){ %>
+                <div class="form-group card-body card border-left-primary " id="font">
+                    <!-----------------------------------------------------//บันทึกข้อความ---------------------------------------------------------------------->
+                    <div class="row ">
+                        <div class="col-sm-auto weight text-center">
+                            <p class="p1">ใบสมัครพนักงานจ้างเหมาแรงงาน </p>
+                            <p class="p1">“โครงการพัฒนาโครงสร้างพื้นฐานเพื่อฟื้นฟูเมืองรองรับการท่องเที่ยวและ ส่งเสริมการเพิ่มรายได้ให้กับผู้ที่ได้รับผลกระทบจากการแพร่ระบาดของโรคไวรัสโคโรนา 2019” </p>
+                            <p class="p1"> เทศบาลตำบลราไวย์อำเภอเมือง จังหวัดภูเก็ต</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        ลำดับที่
+                        <p class="under">
+                            &nbsp;&nbsp;&nbsp;
+                            <%=DocsWork.No%>&nbsp;&nbsp;&nbsp;
+                        </p>
 
+                    </div>
 
-                                    <div class="row">
+                    <!---------------------------------------ส่วนชื่อ-------------------------------------------->
 
-                                        <!-- /.col -->
-                                        <div class="col-md-3 col-sm-6 col-12">
+                    <div class="form-row ">
+                        1. ชื่อ :
+                        <div class="col-sm-auto ">
+                            <p class="under">&nbsp;&nbsp;&nbsp;
+                                <%= DocsWork.titles %>
+                                    <%= DocsWork.fname %>
+                                        <%= DocsWork.lname %>
+                                            &nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        2. เกิดวันที่ :
+                        <div class="col-sm-5">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.birthday%>&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        อายุ :
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.age%>&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        ปี
+                    </div>
+                    <div class="form-row ">
+                        3. เพศ :
+                        <div class="col-sm-2">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%= DocsWork.sex %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        เลขที่บัตรประจำตัวประชาชน :
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.idcard%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        4. สัญชาติ :
+                        <div class="col-sm-3">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.nation%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        เชื้อชาติ :
+                        <div class="col-sm-2">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.ethnicity%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        ศาสนา :
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.religion%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                        5. ที่อยู่ปัจจุบันเลขที่ :
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%= DocsWork.home_number %>&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        หมู่ที่ :
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%= DocsWork.home_moo %>&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        ถนน :
+                        <div class="col-sm-2">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%= DocsWork.home_number %>&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        อำเภอ :
+                        <div class="col-sm-2">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%= DocsWork.home_aumphor %>&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        ตำบล :
+                        <div class="col-sm-auto">
+                            <p class="under">
 
-                                            <div class="info-box">
-                                                <a type="button" href="/Print-Aor1/<%= Document._id %>" id="box_button" class="btn info-box-icon bg-success"><i class="fas fa-print"></i>
-                                                </a>
-                                                <div class="info-box-content">
-                                                    <a type="button" href="/Print-Aor1/<%= Document._id %>" id="box" class="btn btn-default">พิมพ์ อ.๑ </a>
-                                                </div>
-                                            </div>
-                                            <!-- /.info-box -->
-                                        </div>
-                                        <!-- /.col -->
-                                        <div class="col-md-3 col-sm-6 col-12">
+                                <%= DocsWork.home_tumbon_muang %>
+                                    <%= DocsWork.home_tumbon_talang %>
+                                        <%= DocsWork.home_tumbon_katu %>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        จังหวัด :
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.province%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        รหัสไปรษณีย์ :
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.บคธ_ซ%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-row ">
+                        6. เบอร์โทรศัพท์ติดต่อ :
+                        <div class="col-sm-3">
+                            <p class="under">
+                                <%= DocsWork.tel %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        E-mail
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%= DocsWork.Email %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        7. บุคคลที่ติดต่อได้ในกรณีเร่งด่วน(ชื่อ-สกุล) :
+                        <div class="col-sm-3">
+                            <p class="under">
+                                &nbsp;&nbsp;&nbsp;
+                                <%=DocsWork.contact_name%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                        โทรศัพท์ :
+                        <div class="col-sm-auto">
+                            <p class="under">
+                                <%=DocsWork.contact_tel%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        8.ระบุงานที่ต้องการสมัครและสามารถเลือกปฏิบัติได้ 1 งาน
+                    </div>
+                    <div class="row tab2 cut">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="งานทำความสะอาดแหล่งท่องเที่ยวในตำบลราไวย์" ? 'checked': ''%>> งานทำความสะอาดแหล่งท่องเที่ยวในตำบลราไวย์
+                        </div>
+                    </div>
+                    <div class="row tab2 cut">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="งานจ้างถางป่า" ? 'checked': ''%>> งานจ้างถางป่า
+                        </div>
+                    </div>
+                    <div class="row tab2 cut">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="งานขุดลอกคูคลองกำจัดวัชพืช" ? 'checked': ''%>> งานขุดลอกคูคลองกำจัดวัชพืช
+                        </div>
+                    </div>
+                    <div class="row tab2 cut">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="งานทาสีตีเส้นจราจร" ? 'checked': ''%>> งานทาสีตีเส้นจราจร
+                        </div>
+                    </div>
+                    <div class="row">
+                        9.สถานะผู้สมัครงาน
+                    </div>
+                    <div class="row tab2">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="ได้ลงทะเบียนกับองค์การบริหารส่วนจังหวัดภูเก็ตซึ่งมีชื่อในฐานข้อมูลทะเบียนราษฎรในตำบลราไวย์" ? 'checked': ''%>> เป็นผู้ว่างงานที่ได้รับผลกระทบจากโรคไวรัสโคโรน่า
+                            2019 ที่ได้ลงทะเบียนกับองค์การบริหารส่วนจังหวัดภูเก็ต ซึ่งมีชื่อในฐานข้อมูลทะเบียนราษฎรในตำบลราไวย์ (โดยเจ้าหน้าที่จะตรวจสอบข้อมูลที่ลงทะเบียนการว่างงานกับอบจ.)
+                        </div>
+                    </div>
+                    <div class="row tab2">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="เป็นผู้ว่างงานที่ได้รับผลกระทบ พักอาศัยอยู่ในตำบลราไวย์หรือมีสถานประกอบการที่ทำงานในพื้นที่ตำบลราไวย์" ? 'checked': ''%>> เป็นผู้ว่างงานที่ได้รับผลกระทบจากไวรัสโคโรน่า
+                            2019 ซึ่งพักอาศัยอยู่ในตำบลราไวย์หรือมีสถานประกอบการที่ทำงาน ในพื้นที่ตำบลราไวย์(โดยเจ้าหน้าที่จะตรวจข้อมูลหนังสือรับรองการพักอาศัย)
+                        </div>
+                    </div>
+                    <div class="row tab2">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="ครบโดส" ? 'checked': ''%>> ได้รับการฉีดวัคซีนโควิด19 ครบโดสตามประเภทวัคซีน(โดยเจ้าหน้าที่จะตรวจสอบข้อมูลจากระบบตรวจสอบการฉีดวัคซีน)
+                        </div>
+                    </div>
+                    <div class="row">
+                        10.เอกสารประกอบการรับสมัคร
+                    </div>
+                    <div class="row tab2 cut">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="สำเนาบัตรประจำตัวประชาชน จำนวน 1 ฉบับ" ? 'checked': ''%>>สำเนาบัตรประจำตัวประชาชน จำนวน 1 ฉบับ
+                        </div>
+                    </div>
+                    <div class="row tab2 cut">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="สำเนาทะเบียนบ้าน จำนวน 1 ฉบับ" ? 'checked': ''%>>สำเนาทะเบียนบ้าน จำนวน 1 ฉบับ
+                        </div>
+                    </div>
+                    <div class="row tab2 cut">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="สำเนาหลักฐานการเปลี่ยนตัว หรือ ชื่อ-สกุล(ถ้ามี) จำนวน 1 ฉบับ" ? 'checked': ''%>>สำเนาหลักฐานการเปลี่ยนตัว หรือ ชื่อ-สกุล(ถ้ามี) จำนวน 1 ฉบับ
+                        </div>
+                    </div>
+                    <div class="row tab2 cut">
+                        <div class="col-sm-auto">
+                            <input class="form-check-input" type="checkbox" <%=DocsWork.job=="หนังสือรับรองการพักอาศัย (กรณีคนต่างจังหวัด)" ? 'checked': ''%>>หนังสือรับรองการพักอาศัย (กรณีคนต่างจังหวัด)
+                        </div>
+                    </div>
+                    <div class="row">
+                        &nbsp; &nbsp; &nbsp; ขอรับรองว่าข้อมูลที่ข้าพเจ้าได้ให้ไว้ในใบรับสมัครนี้เป็นจริงทุกประการ หากข้อความใดเป็นเท็จหรือไม่ตรงกับความจริง ให้ถือเป็นหลักฐานเพื่อเลิกจ้างข้าพเจ้าได้ทันที
+                    </div>
+                    <p align="center">----------------------------------------------------------------------------------------------------------------------------------------------</p>
+                    <div class="align-Center">
+                        <div class="row">
+                            <strong>สำหรับเจ้าหน้าที่ </strong>
+                        </div>
+                        <div class="row tab2">
+                            <div class="col-sm-auto">
+                                <input class="form-check-input" type="checkbox" <%=DocsWork.job=="งานจ้างถางป่า" ? 'checked': ''%>>หลักฐานครบถ้วน
+                            </div>
+                        </div>
+                        <div class="row tab2 cut">
+                            <div class="col-sm-auto">
+                                <input class="form-check-input" type="checkbox" <%=DocsWork.job=="งานขุดลอกคูคลองกำจัดวัชพืช" ? 'checked': ''%>> มีปัญหา เนื่องจาก......................................
+                            </div>
+                        </div>
+                        <div class="row tab2 normal">
+                            <div class="col-sm-6">
+                                (ลงชื่อ)..................................เจ้าหน้าที่ผู้รับสมัคร
+                            </div>
+                        </div>
 
-                                            <div class="info-box">
-                                                <a type="button" href="/Print-Nor1/<%= Document._id %>" id="box_button" class="btn info-box-icon bg-success"><i class="fas fa-print"></i>
-                                                </a>
-                                                <div class="info-box-content">
-                                                    <a type="button" href="/Print-Nor1/<%= Document._id %>" id="box" class="btn btn-default">พิมพ์ น.๑ </a>
-                                                </div>
-                                            </div>
-                                            <!-- /.info-box -->
-                                        </div>
-                                        <!-- /.col -->
-                                        <div class=" col-sm-6 col-12">
+                        <div class="align-Center">
+                            <div class="row tab2 normal">
+                                <div class="col-sm-6">
+                                    (..........................................................)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row tab2 normal">
+                            <div class="col-sm-6">
+                                (ลงชื่อ).....................................ผู้ตรวจสอบเอกสาร
+                            </div>
+                            <div class="col-sm-6">
+                                (ลงชื่อ)............................................ผู้สมัคร
+                            </div>
+                        </div>
 
-                                            <div class="info-box">
-                                                <a type="button" href="/Print-KorKwam1/<%= Document._id %>" id="box_button" class="btn info-box-icon bg-success"><i class="fas fa-print"></i>
-                                                </a>
-                                                <div class="info-box-content">
-                                                    <a type="button" href="/Print-KorKwam1/<%= Document._id %>" id="box" class="btn btn-default">พิมพ์บันทึกข้อความ</a>
-                                                </div>
-                                            </div>
-                                            <!-- /.info-box -->
-                                        </div>
-                                        <!-- /.col -->
-                                    </div>
-
-                                    <% })%>
+                        <div class="align-Center">
+                            <div class="row tab2 normal">
+                                <div class="col-sm-6">
+                                    (..........................................................)
+                                </div>
+                                <div class="col-sm-6">
+                                    (..........................................................)
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
-
-
-            <%- include footer %>
-
-                <aside class="control-sidebar control-sidebar-dark">
-                </aside>
-
                 </div>
-
-
+                <%})%>
+        </div>
+        <script>
+            window.addEventListener("load", window.print());
+        </script>
 </body>
 
 </html>

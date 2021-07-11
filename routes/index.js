@@ -23,4 +23,15 @@ router.get('/', function(req, res, next) {
         });
     });
 });
+
+
+router.get('/Select-Print/:id', function(req, res, next) {
+    var Docs = db.get('DocsWorks');
+    Docs.find(req.params.id, {}, function(err, DocsWork) {
+        res.render('Select-Print', {
+            DocsWorks: DocsWork
+        });
+    })
+});
+
 module.exports = router;
