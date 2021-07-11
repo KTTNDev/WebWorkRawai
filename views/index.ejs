@@ -14,24 +14,35 @@
 </head>
 
 <body>
-    <!--
-    <form method="POST" action="pdfMake\pdf">
-        <label for="txtFirstName">First Name : </label>
-        <input type="text" id='txtFirstName' name='fname'>
-    </form>
-    <form method="POST" action="pdfMake\pdf">
-        <label for="txtLastName">Last Name : </label>
-        <input type="text" id='txtLastName' name='lname'>
+    <style>
+        .row {
+            margin-top: -8px;
+        }
+        
+        .p1 {
+            font-size: 2rem;
+        }
+        
+        .normal {
+            margin-top: 0!important;
+        }
+        
+        .card-body {
+            padding-left: 10rem !important;
+            padding-right: 10rem !important;
+            padding-top: 0 !important;
+        }
+    </style>
 
-        <button type="submit">Create PDF</button>
-
-    </form>
-    -->
     <%- include ('layout') %>
         <section class="">
+
             <div class="container-fluid">
+                <h4 class="m-4 text-success headtext text-center">“โครงการพัฒนาโครงสร้างพื้นฐานเพื่อฟื้นฟูเมืองรองรับการท่องเที่ยวและ ส่งเสริมการเพิ่มรายได้ให้กับผู้ที่ได้รับผลกระทบจากการแพร่ระบาดของโรคไวรัสโคโรนา 2019”
+                </h4>
                 <div class="form-group card-body ">
-                    <div class="col-md-12 card border-left-primary shadow-lg box box-green-light card card-outline card-success">
+
+                    <div class="col-md-12 card border-left-primary shadow-lg box box-green-light card card-outline card-primary">
                         <h4 class="m-4 text-success headtext"><i class="far fa-file-alt"></i> รายชื่อผู้สมัคร
                         </h4>
                         <hr>

@@ -32,7 +32,7 @@ html {
 }
 
 .main-sidebar {
-    background-color: #01853D!important;
+    background-color: #015585!important;
 }
 
 .content {
@@ -44,7 +44,7 @@ html {
 }
 
 .logo {
-    background-color: #01853D!important;
+    background-color: #014585!important;
 }
 
 .sidebar {
@@ -58,7 +58,7 @@ html {
 }
 
 .sidebar:before {
-    background: #00331D;
+    background: #004175;
     content: ' ';
     display: block;
     width: 100%;
@@ -144,7 +144,7 @@ html {
 }
 
 .text-success {
-    color: #167265 !important;
+    color: #1363ad !important;
     font-size: 3rem;
 }
 
@@ -154,11 +154,11 @@ html {
 }
 
 .header-droptone {
-    background-color: #01853D!important;
+    background-color: #014a85!important;
 }
 
 .footer-color {
-    background-color: #01853D!important;
+    background-color: #015085!important;
 }
 
 @font-face {
